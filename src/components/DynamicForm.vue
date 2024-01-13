@@ -1,6 +1,7 @@
 <template>
-  <Form>
+  <Form class="form">
     <div
+      class="form-field"
       v-for="{ as, name, label, children, ...attrs } in schema.fields"
       :key="name"
     >
@@ -17,10 +18,19 @@
           </component>
         </template>
       </Field>
-      <ErrorMessage :name="name" />
+      <ErrorMessage
+        as="div"
+        class="error-message"
+        :name="name"
+        v-slot="{ message }"
+      >
+        <p>{{ message }}</p></ErrorMessage
+      >
     </div>
 
-    <button>Submit</button>
+    <div class="buttons">
+      <button>Entrar</button> <button>Cria Conta</button>
+    </div>
   </Form>
 </template>
 
@@ -42,3 +52,72 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+.form {
+  background-color: #2d2d2d;
+  padding: 30px;
+  border-radius: 10px;
+  color: #fff; /* Cor do texto */
+  font-family: "Roboto", sans-serif;
+  width: 270px;
+  height: 330px;
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+input,
+select,
+textarea {
+  box-sizing: border-box; /* Garante que a largura inclua a borda e o preenchimento */
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button {
+  background-color: #111315;
+  color: #fff;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-family: "Inter", sans-serif;
+}
+
+button:hover {
+  background-color: #0056b3;
+  color: black;
+}
+
+.error-message {
+  color: #ff3333;
+  font-family: "Roboto", sans-serif;
+  font-size: 12px;
+}
+
+.buttons {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  justify-content: space-between;
+}
+
+.form-field {
+  margin-top: 10px;
+  width: 100%;
+}
+</style>
