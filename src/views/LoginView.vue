@@ -1,17 +1,17 @@
 <template>
   <section class="login">
     <h1>ENTRE NA SUA CONTA</h1>
-    <DynamicForm :schema="formSchema" />
+    <LoginForm :schema="formSchema" />
   </section>
 </template>
 
 <script>
-import DynamicForm from "@/components/DynamicForm.vue";
+import LoginForm from "@/components/LoginForm.vue";
 import * as Yup from "yup";
 
 export default {
   components: {
-    DynamicForm,
+    LoginForm,
   },
   data: () => {
     const formSchema = {
