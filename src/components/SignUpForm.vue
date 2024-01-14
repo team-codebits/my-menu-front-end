@@ -38,7 +38,7 @@
 import { Form, Field, ErrorMessage } from "vee-validate";
 
 export default {
-  name: "DynamicForm",
+  name: "SignUpForm",
   components: {
     Form,
     Field,
