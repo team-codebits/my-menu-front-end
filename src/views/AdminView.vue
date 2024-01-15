@@ -178,11 +178,30 @@ export default {
 </script>
 
 <template>
-  <section class="main">
-    <div class="card">
-      <MegaMenu :model="items" orientation="vertical" />
-    </div>
-  </section>
+  <div class="wrapper">
+    <aside class="left-sidebar">
+      <div class="card">
+        <MegaMenu :model="items" orientation="vertical" />
+      </div>
+    </aside>
+    <section class="content"></section>
+  </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+.wrapper {
+  display: flex;
+}
+.left-sidebar {
+  width: 20%;
+  background-color: #f0f0f0;
+  padding: 20px;
+  height: 100vh;
+}
+
+.content {
+  flex: 1;
+  padding: 20px;
+  background-color: aquamarine;
+}
+</style>
