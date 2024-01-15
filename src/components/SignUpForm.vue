@@ -38,7 +38,7 @@
 import { Form, Field, ErrorMessage } from "vee-validate";
 
 export default {
-  name: "DynamicForm",
+  name: "SignUpForm",
   components: {
     Form,
     Field,
@@ -65,7 +65,6 @@ export default {
   color: #fff; /* Cor do texto */
   font-family: "Roboto", sans-serif;
   width: 270px;
-  height: 330px;
 }
 
 label {
