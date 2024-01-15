@@ -23,8 +23,8 @@ const items = ref([
     route: "/signup",
   },
   {
-    label: "Dashboard",
-    route: "/dashboard",
+    label: "Admin",
+    route: "/admin",
   },
 ]);
 </script>

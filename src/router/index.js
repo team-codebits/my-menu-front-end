@@ -3,7 +3,7 @@ import HomeView from "../views/HomeView.vue";
 import AboutView from "../views/AboutView.vue";
 import LoginView from "../views/LoginView.vue";
 import SignUpView from "../views/SignUpView.vue";
-import DashboardViewVue from "@/views/DashboardView.vue";
+import AdminViewVue from "@/views/AdminView.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -31,7 +31,7 @@ const router = createRouter({
     {
       path: "/dashboard",
       name: "dashboard",
-      component: DashboardViewVue,
+      component: AdminViewVue,
     },
   ],
 });
