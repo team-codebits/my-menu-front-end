@@ -6,4 +6,8 @@
   </section>
 </template>
 
-<style scoped></style>
+<style scoped>
+h1 {
+  font-family: "Inter", sans-serif;
+}
+</style>

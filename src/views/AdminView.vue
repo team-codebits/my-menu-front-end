@@ -72,7 +72,8 @@ export default {
 }
 .left-sidebar {
   width: 20%;
-  background-color: #f0f0f0;
+  /* background-color: #374151; */
+  background-color: #2d2d2d;
   padding: 20px;
   height: 100vh;
 }
@@ -80,6 +81,5 @@ export default {
 .content {
   flex: 1;
   padding: 20px;
-  background-color: aquamarine;
 }
 </style>
