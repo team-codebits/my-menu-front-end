@@ -1,10 +1,18 @@
 <script>
 import MegaMenu from "primevue/megamenu";
+import Dashboard from "../components/admin/Dashboard.vue";
+import Users from "../components/admin/Users.vue";
+import Menus from "../components/admin/Menus.vue";
+import Team from "../components/admin/Team.vue";
 import { ref, onMounted } from "vue";
 
 export default {
   components: {
     MegaMenu,
+    Dashboard,
+    Usuarios,
+    Donos,
+    Equipes,
   },
   setup() {
     const items = ref([
