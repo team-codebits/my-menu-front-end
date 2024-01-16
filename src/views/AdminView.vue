@@ -15,7 +15,7 @@ export default {
         label: "Usuários",
       },
       {
-        label: "Donos",
+        label: "Cardápios",
       },
       {
         label: "Equipes",
