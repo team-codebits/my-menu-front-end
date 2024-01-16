@@ -10,31 +10,45 @@ export default {
   components: {
     MegaMenu,
     Dashboard,
-    Usuarios,
-    Donos,
-    Equipes,
+    Users,
+    Menus,
+    Team,
   },
   setup() {
+    const onMenuItemClick = (item) => {
+      console.log(item);
+      selectedItem.value = item;
+    };
+
+    const selectedItem = ref("Dashboard");
+
     const items = ref([
       {
         label: "Dashboard",
+        command: () => onMenuItemClick("Dashboard"),
       },
       {
         label: "Usuários",
+        command: () => onMenuItemClick("Usuários"),
       },
       {
         label: "Cardápios",
+        command: () => onMenuItemClick("Cardápios"),
       },
       {
-        label: "Equipes",
+        label: "Equipe",
+        command: () => onMenuItemClick("Equipe"),
       },
     ]);
 
-    onMounted(() => {
-      console.log(items.value);
-    });
+    const componentMapping = {
+      Dashboard: Dashboard,
+      Usuários: Users,
+      Cardápios: Menus,
+      Equipe: Team,
+    };
 
-    return { items };
+    return { items, selectedItem, onMenuItemClick, componentMapping };
   },
 };
 </script>
@@ -46,7 +60,9 @@ export default {
         <MegaMenu :model="items" orientation="vertical" />
       </div>
     </aside>
-    <section class="content"></section>
+    <section class="content">
+      <component :is="componentMapping[selectedItem]"></component>
+    </section>
   </div>
 </template>
 
